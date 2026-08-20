@@ -3,10 +3,12 @@ import os
 from datetime import datetime
 
 LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
-logs_path = os.path.join(os.getcwd(), "logs", LOG_FILE)
-os.makedirs(logs_path, exist_ok=True)
+# Place logs directory at the project root (parent of src)
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+LOGS_DIR = os.path.join(PROJECT_ROOT, 'logs')
+os.makedirs(LOGS_DIR, exist_ok=True)
 
-LOG_FILE_PATH = os.path.join(logs_path, LOG_FILE)
+LOG_FILE_PATH = os.path.join(LOGS_DIR, LOG_FILE)
 
 logging.basicConfig(
     filename=LOG_FILE_PATH,

@@ -65,6 +65,7 @@ Thumbs.db
 .coverage.*
 htmlcov/
 .pytest_cache/
+catboost_info
 
 # Temporary files
 *.tmp
